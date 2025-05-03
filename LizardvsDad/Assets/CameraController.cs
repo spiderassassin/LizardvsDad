@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    
     public Transform target; // Typically your player
     public float distance = 5.0f;
     public float mouseSensitivity = 100f;
@@ -30,8 +31,9 @@ public class CameraController : MonoBehaviour
 
         if (target != null)
         {
-
-            target.rotation = Quaternion.Euler(0f, yRotation, 0f);
+            //fixes the the direction of the lizard to direction of camera
+            //target.rotation = Quaternion.Euler(0f, yRotation, 0f);
+            //distance between camera and controller
             Vector3 offset = transform.rotation * new Vector3(0, 0, -distance);
             transform.position = target.position + offset;
         }
