@@ -30,6 +30,8 @@ public class CameraController : MonoBehaviour
 
         if (target != null)
         {
+
+            target.rotation = Quaternion.Euler(0f, yRotation, 0f);
             Vector3 offset = transform.rotation * new Vector3(0, 0, -distance);
             transform.position = target.position + offset;
         }
