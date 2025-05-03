@@ -23,10 +23,6 @@ public class PlayerController : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        // Rotate toward movement direction
-        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-
         // Move forward
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
     }
