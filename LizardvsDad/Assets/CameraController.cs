@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // Lock cursor to center
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
