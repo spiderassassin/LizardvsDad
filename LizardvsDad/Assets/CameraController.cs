@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
     public float mouseSensitivity = 100f;
     public float verticalClamp = 80f;
 
-    float xRotation = 0f;
-    float yRotation = 0f;
+    public float xRotation = 0f;
+    public float yRotation = 0f;
 
     void Start()
     {
@@ -21,13 +21,13 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        yRotation += mouseX;
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, 0, verticalClamp);
+        xRotation += mouseX;
+        //yRotation -= mouseY;
+        yRotation = Mathf.Clamp(yRotation, 0, verticalClamp);
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        transform.rotation = Quaternion.Euler(yRotation, xRotation, 0);
 
         if (target != null)
         {

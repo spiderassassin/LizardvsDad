@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         prev_speed = animator.speed;
         animator.speed = 0;
+        print(camera.eulerAngles.y);
     }
 
     void FixedUpdate()
