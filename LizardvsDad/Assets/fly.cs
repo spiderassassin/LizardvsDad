@@ -8,6 +8,7 @@ public class fly : MonoBehaviour
     public float time = 0;
     public Transform camera;
     Vector3 basePosition;
+    public bool isFly;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,11 @@ public class fly : MonoBehaviour
     {
         time = time + Time.deltaTime * speed;
         float sin_value = Mathf.Sin(time) * 0.01f;
-        transform.position = new Vector3(basePosition.x, basePosition.y + sin_value, basePosition.z);
+        if (isFly == true)
+        {
+            transform.position = new Vector3(basePosition.x, basePosition.y + sin_value, basePosition.z);
+        }
+        
         Vector3 camera_position = camera.position;
         camera_position.y = transform.position.y;
         transform.LookAt(camera_position);
