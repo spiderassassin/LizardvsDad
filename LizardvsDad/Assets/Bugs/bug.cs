@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class fly : MonoBehaviour
+public class bug : MonoBehaviour
 {
     public float speed;
     public float time = 0;
     public Transform camera;
     Vector3 basePosition;
     public bool isFly;
+    public TextMeshProUGUI score;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,12 @@ public class fly : MonoBehaviour
     {
         if (other.gameObject.tag == "Tongue")
         {
-            print("zz");
+            Score scoreText = score.GetComponent<Score>();
+            if (scoreText != null)
+            {
+                scoreText.IncrementScore();
+            }
+            
             Destroy(gameObject);
         }
     }
