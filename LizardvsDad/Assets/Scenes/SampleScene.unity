@@ -2006,7 +2006,7 @@ Transform:
   m_GameObject: {fileID: 832575517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -13.91, z: -12.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2948,7 +2948,7 @@ Transform:
   m_GameObject: {fileID: 1174767237}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.154, y: -0.7190001, z: -1.666}
+  m_LocalPosition: {x: -1.154, y: -0.7, z: -1.666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3198,6 +3198,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5005348, y: 2.500533, z: 0.22110477}
   m_Center: {x: 0.00000017881396, y: 1.2502666, z: -0.0000009536743}
+--- !u!1 &1270987212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270987214}
+  - component: {fileID: 1270987213}
+  m_Layer: 0
+  m_Name: SlipperShooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1270987213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270987212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530d5c94574a9bd41bbef22c3f11d4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5959334040075256055, guid: 97ebc8505b150d443af4fcdfc2de7b52,
+    type: 3}
+  target: {fileID: 1409248472}
+  fireInterval: 5
+  projectileSpeed: 0.7
+  sourceObject: {fileID: 1270987212}
+  active: 0
+  heightAboveTarget: 0.5
+--- !u!4 &1270987214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270987212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.874, y: -0.66, z: -3.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1335888062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5647530339594464023, guid: 0fd147cfcb300c14383d6ea56435a430,
@@ -3238,6 +3290,19 @@ MonoBehaviour:
   maxLength: 20
   speed: 10
   descending_speed: 100
+--- !u!114 &1409248483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409248472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b56b23f32591fa4da0ffc39334c0a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &1421275637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,6 +4934,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1409248479}
+    - targetCorrespondingSourceObject: {fileID: 1656935077840647149, guid: f0f3e401eeaca45e2877e0aacdb49fce,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1409248483}
     - targetCorrespondingSourceObject: {fileID: 2242399414760179904, guid: f0f3e401eeaca45e2877e0aacdb49fce,
         type: 3}
       insertIndex: -1
@@ -5035,3 +5104,4 @@ SceneRoots:
   - {fileID: 1096063117}
   - {fileID: 5186636736615523446}
   - {fileID: 4459147081082813898}
+  - {fileID: 1270987214}
