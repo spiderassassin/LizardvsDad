@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1673891713243267678}
   - component: {fileID: 8853961052978105401}
   - component: {fileID: 1783780954232861991}
+  - component: {fileID: 1353217481940584848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -83,8 +84,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d3d730d6f334244927669ef90ac8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  rb: {fileID: 0}
   moveSpeed: 1
   rotationSpeed: 90
+  turnSmoothTime: 0.1
+  animator: {fileID: 0}
 --- !u!65 &1783780954232861991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,6 +111,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 0.5330658, z: 2.417044}
   m_Center: {x: -0.0000018998979, y: -0.00056505203, z: -0.2853244}
+--- !u!114 &1353217481940584848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656935077840647149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a23bcfcb0bad84dbeabc85a8561d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &1432131156473427345
 PrefabInstance:
   m_ObjectHideFlags: 0
