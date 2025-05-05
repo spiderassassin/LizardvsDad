@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         print(transform.forward);
 
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.15f, climbable))
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.1f, climbable))
         {
             print("wall detected");
             transform.localRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
