@@ -9,9 +9,16 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float rotationSpeed = 720f;
     public float turnSmoothTime = 0.1f;
+    public LayerMask climbable;
+    public LayerMask obstacle;
     float turnSmoothVelocity;
     public Animator animator;
     private float prev_speed;
+    public AnimationCurve curve;
+    public float time;
+    Vector3 climbPoint;
+    public Transform floor;
+    public float skinOffset = 0.1f;
 
     private void Start()
     {
@@ -22,36 +29,54 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        RaycastHit current_floor;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out current_floor, 0.15f, climbable))
+        {
+            floor = current_floor.transform;
+           
+
+        }
+
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = transform.forward * vertical;
+        print(transform.forward);
 
-        //if (vertical < 0)
-        //{
-            //vertical = 0f;
-        //}
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.15f, climbable))
+        {
+            print("wall detected");
+            transform.localRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            climbPoint = hit.point;
+            transform.position = climbPoint - climbPoint * skinOffset;
 
-        // Movement direction
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        }
+        
+
+            transform.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime);
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            Vector3 movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            Move(movDir);
-
             animator.speed = prev_speed;
         }
         else
         {
             animator.speed = 0;
         }
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.15f, obstacle) == false)
+        {
+            Move(direction);
+        }
+            
     }
 
     public void Move(Vector3 direction)
     {
+        
+        
         // Move forward
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + (direction) * moveSpeed * Time.deltaTime);
+        
     }
 }
