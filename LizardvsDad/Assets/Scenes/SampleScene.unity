@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 49049431}
   - component: {fileID: 50146711}
   - component: {fileID: 50146712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slippers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,6 +383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Trash_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647530339594368823, guid: 0fd147cfcb300c14383d6ea56435a430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5647530339594464023, guid: 0fd147cfcb300c14383d6ea56435a430,
         type: 3}
@@ -901,6 +906,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowelRail_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818627760540222618, guid: bea35e56c52b0d7449b2bfa2aa59014a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1577,6 +1587,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowelRail_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1818627760540222618, guid: bea35e56c52b0d7449b2bfa2aa59014a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1690,7 +1705,7 @@ GameObject:
   - component: {fileID: 621186580}
   - component: {fileID: 622316756}
   - component: {fileID: 624251413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShowerTable_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,6 +1745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BathroomProps_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 347122114974697094, guid: 0722ba24861327049b49ea9883617919,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1124467337379945532, guid: 0722ba24861327049b49ea9883617919,
         type: 3}
@@ -2107,7 +2127,7 @@ GameObject:
   - component: {fileID: 710284376}
   - component: {fileID: 709318296}
   - component: {fileID: 711313497}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Toilet_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2148,6 +2168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Toothbrush_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224626104435595654, guid: 74cf6ca496bdaa3488d7413a65e7e662,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8224626104435885478, guid: 74cf6ca496bdaa3488d7413a65e7e662,
         type: 3}
@@ -2321,7 +2346,7 @@ GameObject:
   - component: {fileID: 782769200}
   - component: {fileID: 783900400}
   - component: {fileID: 783900401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2450,10 +2475,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1054800600}
     m_Modifications:
+    - target: {fileID: 5882195771698439002, guid: 920cd249e2394448285fb8938326682a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7373899861674502711, guid: 920cd249e2394448285fb8938326682a,
         type: 3}
       propertyPath: m_Name
       value: Switch_C1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373899861674502711, guid: 920cd249e2394448285fb8938326682a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7862874245604929677, guid: 920cd249e2394448285fb8938326682a,
         type: 3}
@@ -2586,7 +2621,7 @@ GameObject:
   - component: {fileID: 842403790}
   - component: {fileID: 841436430}
   - component: {fileID: 842403791}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shower_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2971,7 +3006,7 @@ GameObject:
   - component: {fileID: 997893170}
   - component: {fileID: 996927218}
   - component: {fileID: 997893171}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShowerMirror_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3137,6 +3172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Painting_25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150170104139631681, guid: d63a76db7a34fa544aa50ce4ac10d810,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6778510846768715515, guid: d63a76db7a34fa544aa50ce4ac10d810,
         type: 3}
@@ -3447,6 +3487,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlassToothbrush_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4966731299109542133, guid: 4356324233a18dd46af69751c0460ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3514,6 +3559,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hook_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945255866208278415, guid: 33ce96d51876c8e4a84e327710ee1c85,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3687,6 +3737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SoapBottle_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034541269375524727, guid: a2631485b8201df46b6e41596fd477a1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3956,6 +4011,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rangehood
       objectReference: {fileID: 0}
+    - target: {fileID: 9000400802294573940, guid: b9c304d4cdb4f1d4d8e8b6b704dea212,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9000400802295002964, guid: b9c304d4cdb4f1d4d8e8b6b704dea212,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4080,7 +4140,7 @@ GameObject:
   - component: {fileID: 1426341100}
   - component: {fileID: 1427471916}
   - component: {fileID: 1429725421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShowerCarpet_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4106,8 +4166,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6205259, y: 0.016187418, z: 0.9596119}
-  m_Center: {x: 0, y: 0.007365275, z: 0}
+  m_Size: {x: 0.6205259, y: 0.055442758, z: 0.9596119}
+  m_Center: {x: 0, y: 0.026992943, z: 0}
 --- !u!23 &1443332410
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4185,7 +4245,7 @@ GameObject:
   - component: {fileID: 1444332538}
   - component: {fileID: 1443332410}
   - component: {fileID: 1445273595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Towel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4291,6 +4351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoomTable_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2492452761658410266, guid: 62edc4ee978a703489e05ccc07d9f824,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4471,6 +4536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1534560902712794354, guid: b5e044afc18c26740abf07b4433951a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4593,6 +4663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hook_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037353149477836248, guid: 69e0e08860c9393408b23c9168a9de49,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1037353149478062584, guid: 69e0e08860c9393408b23c9168a9de49,
         type: 3}
@@ -4925,6 +5000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToiletPaper_02
       objectReference: {fileID: 0}
+    - target: {fileID: 2001674404765993646, guid: f09107d584cbb124ca9cefbb0b1acef5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4995,6 +5075,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2878471133914404792, guid: 3e8e8dd14748f4a4994697224b9dc1e4,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878471133914404792, guid: 3e8e8dd14748f4a4994697224b9dc1e4,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -5042,7 +5127,7 @@ GameObject:
   - component: {fileID: 1814824242}
   - component: {fileID: 1815955442}
   - component: {fileID: 1815955443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slippers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5400,7 +5485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9b7d8675132578447a8f2fda07f6fe9f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b7d8675132578447a8f2fda07f6fe9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5646,7 +5731,7 @@ GameObject:
   - component: {fileID: 2089203669}
   - component: {fileID: 2090333461}
   - component: {fileID: 2092264406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Towel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5887,6 +5972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: turnSmoothTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853961052978105401, guid: f0f3e401eeaca45e2877e0aacdb49fce,
+        type: 3}
+      propertyPath: obstacle.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8853961052978105401, guid: f0f3e401eeaca45e2877e0aacdb49fce,
         type: 3}
