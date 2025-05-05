@@ -31,12 +31,5 @@ public class fly : MonoBehaviour
         transform.Rotate(0, 180, 0);
     }
  
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Tongue")
-        {
-            print("zz");
-            Destroy(gameObject);
-        }
-    }
+
 }
