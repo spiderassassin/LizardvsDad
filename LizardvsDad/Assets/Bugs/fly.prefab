@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7357548639079028556}
   - component: {fileID: 3084374390755026836}
   - component: {fileID: 1691310801242773282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: 5
   time: 0
   camera: {fileID: 0}
+  isFly: 0
 --- !u!95 &3084374390755026836
 Animator:
   serializedVersion: 5

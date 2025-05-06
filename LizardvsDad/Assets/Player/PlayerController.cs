@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         prev_speed = animator.speed;
         animator.speed = 0;
-        print(camera.eulerAngles.y);
+        //print(camera.eulerAngles.y);
     }
 
     void FixedUpdate()
@@ -41,12 +41,12 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = transform.forward * vertical;
-        print(transform.forward);
+        //print(transform.forward);
 
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.1f, climbable))
         {
-            print("wall detected");
+            //print("wall detected");
             transform.localRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
             climbPoint = hit.point;
             transform.position = climbPoint - climbPoint * skinOffset;
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.speed = 0;
         }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.15f, obstacle) == false)
+        if (true && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.15f, obstacle) == false)
         {
             Move(direction);
         }
