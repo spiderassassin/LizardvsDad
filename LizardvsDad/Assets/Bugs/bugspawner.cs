@@ -65,7 +65,7 @@ public class bugspawner : MonoBehaviour
             filled = false;
             
             int index = Random.Range(0, bugs_limit);
-            print("index" + index);
+            //print("index" + index);
 
             if (index < grassHopperSpawns.Count)
                 {

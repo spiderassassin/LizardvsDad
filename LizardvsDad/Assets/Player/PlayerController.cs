@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit current_floor;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out current_floor, 0.15f, climbable))
+        Debug.DrawRay(transform.position, -transform.up * 0.3f, Color.red);
+        if (Physics.Raycast(transform.position, -transform.up, out current_floor, 0.3f, climbable))
         {
             floor = current_floor.transform;
            
@@ -46,10 +47,17 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.1f, climbable))
         {
-            //print("wall detected");
-            transform.localRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-            climbPoint = hit.point;
-            transform.position = climbPoint - climbPoint * skinOffset;
+            if(hit.transform.gameObject != floor.gameObject)
+            {
+                print("wall detected" + hit.transform.gameObject.name);
+                print(Quaternion.FromToRotation(transform.up, hit.normal).eulerAngles);
+                transform.Rotate(-90f, 0f, 0f, Space.Self);
+
+                climbPoint = hit.point;
+                float value = hit.normal.x + hit.normal.y + hit.normal.z;
+                transform.position = climbPoint + hit.normal * skinOffset;
+            }
+            
 
         }
         
