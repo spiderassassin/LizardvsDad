@@ -31,8 +31,6 @@ public class CameraController : MonoBehaviour
 
         if (target != null)
         {
-            //fixes the the direction of the lizard to direction of camera
-            //target.rotation = Quaternion.Euler(0f, yRotation, 0f);
             //distance between camera and controller
             Vector3 offset = transform.rotation * new Vector3(0, 0, -distance);
             transform.position = target.position + offset;
