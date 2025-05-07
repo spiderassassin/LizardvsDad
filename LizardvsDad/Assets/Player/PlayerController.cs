@@ -45,12 +45,25 @@ public class PlayerController : MonoBehaviour
         //print(transform.forward);
 
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.1f, climbable))
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.15f, climbable))
+        {
+            print("wall detected");
+            transform.rotation = Quaternion.LookRotation(Quaternion.FromToRotation(transform.up, hit.normal)*transform.forward, hit.normal);
+            climbPoint = hit.point;
+            transform.position = climbPoint - climbPoint * skinOffset;
+
+            // Movement direction
+            
+        }
+        /*
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.1f, climbable))
         {
             if(hit.transform.gameObject != floor.gameObject)
             {
                 print("wall detected" + hit.transform.gameObject.name);
                 print(Quaternion.FromToRotation(transform.up, hit.normal).eulerAngles);
+
                 transform.Rotate(-90f, 0f, 0f, Space.Self);
 
                 climbPoint = hit.point;
@@ -59,7 +72,7 @@ public class PlayerController : MonoBehaviour
             }
             
 
-        }
+        }*/
         
 
             transform.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime);
