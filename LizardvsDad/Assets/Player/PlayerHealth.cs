@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,14 +16,17 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            Die();
         }
         healthText.SetText("Health: " + health.ToString() + "/" + maxHealth.ToString());
+
+        if (health == 0)
+        {
+            Die();
+        }
     }
 
     private void Die()
     {
-        Debug.Log("Game Over");
-        //future logic
+        SceneManager.LoadScene("GameOverMenu");
     }
 }
