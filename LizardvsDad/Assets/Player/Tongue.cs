@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Tongue : MonoBehaviour
@@ -13,6 +14,8 @@ public class Tongue : MonoBehaviour
     private bool extending = false;
     private Vector3 point;
     public LayerMask bugs;
+    public TextMeshProUGUI scoreText;
+    private int score = 0;
 
     void Update()
     {
@@ -48,6 +51,8 @@ public class Tongue : MonoBehaviour
         {
             print("yumm");
             Destroy(hit.transform.gameObject);
+            score += 1;
+            scoreText.SetText("Score: "+score.ToString());
         }
 
 
