@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
     private static GameManager _instance;
     public float timer = 0f;
+    public GameObject alert;
     public static GameManager Instance
+
     {
         get
         {
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = GameState.DadCome;
             timer = 0;
+            alert.SetActive(true);
         }
 
         if ((gameState == GameState.DadCome) && (dad_time == true))
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
             gameState = GameState.DadTime;
             timer = 0;
             dad_time = false;
+            
         }
 
 
@@ -70,6 +74,7 @@ public class GameManager : MonoBehaviour
             shooter.active = false;
             gameState = GameState.ChillTime;
             timer = 0;
+            alert.SetActive(false);
         }
 
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public Color defaultColor;
     public float timer = 0;
     public CinemachineImpulseSource impulseSource;
+    public Slider slider;
 
 
     private void Start()
@@ -33,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         {
             health = 0;
         }
-        healthText.SetText("Health: " + health.ToString() + "/" + maxHealth.ToString());
+        //healthText.SetText("Health: " + health.ToString() + "/" + maxHealth.ToString());
 
         if (health == 0)
         {
@@ -48,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        slider.value = (float)health / 100f;
         if (timer > 0f)
         {
             timer = timer - Time.deltaTime;
