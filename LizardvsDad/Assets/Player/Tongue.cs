@@ -16,6 +16,9 @@ public class Tongue : MonoBehaviour
     public LayerMask bugs;
     public TextMeshProUGUI scoreText;
     private int score = 0;
+    bool bug_caught = false;
+    Transform bug_transform;
+    public AudioSource eat;
 
     void Update()
     {
@@ -23,6 +26,10 @@ public class Tongue : MonoBehaviour
             extending = true;
         if (Input.GetKeyUp(KeyCode.Space))
             extending = false;
+        if (bug_caught)
+        {
+            extending = false;
+        }
 
         // Adjust length
         float targetLength = 0;
@@ -36,8 +43,20 @@ public class Tongue : MonoBehaviour
         if (extending == false)
         {
             currentLength = Mathf.MoveTowards(currentLength, targetLength, descending_speed * Time.deltaTime);
+            if (bug_caught)
+            {
+                bug_transform.position = tongue.position + tongue.up * currentLength;
+                if(currentLength == 0)
+                {
+                    Destroy(bug_transform.gameObject);
+                    eat.Play();
+                    score += 1;
+                    scoreText.SetText("Score: "+score.ToString());
+                    bug_caught = false;
+                }
+            }
         }
-        else
+        else if(extending == true)
         {
             currentLength = Mathf.MoveTowards(currentLength, targetLength, speed * Time.deltaTime);
         }
@@ -49,10 +68,12 @@ public class Tongue : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(tongue.position, tongue.up, out hit, currentLength, bugs))
         {
+            bug_caught = true;
+            bug_transform = hit.transform;
             print("yumm");
-            Destroy(hit.transform.gameObject);
-            score += 1;
-            scoreText.SetText("Score: "+score.ToString());
+            //Destroy(hit.transform.gameObject);
+            //score += 1;
+            //scoreText.SetText("Score: "+score.ToString());
         }
 
 
