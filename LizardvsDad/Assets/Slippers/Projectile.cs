@@ -7,6 +7,10 @@ public class Projectile : MonoBehaviour
 {
     public float lifeTime = 5f;
     public int damage = 20;
+    public AudioSource falling;
+    public AudioSource impact;
+    public AudioSource squeek;
+    bool soundplayed = false;
 
     void Start()
     {
@@ -22,11 +26,25 @@ public class Projectile : MonoBehaviour
             var health = hitObject.GetComponent<PlayerHealth>();
             if (health != null)
             {
+                
                 health.TakeDamage(damage);
+                squeek.Play();
             }
+            falling.Stop();
+            impact.Play();
+            soundplayed = true;
+
         }
 
-        Destroy(gameObject);
+
+    }
+
+    private void Update()
+    {
+        if(soundplayed == true && impact.isPlaying == false)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

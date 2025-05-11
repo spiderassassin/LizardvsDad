@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     Vector3 climbPoint;
     public Transform floor;
     public float skinOffset = 0.1f;
+    public AudioSource walk;
 
     private void Start()
     {
@@ -80,10 +81,15 @@ public class PlayerController : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             animator.speed = prev_speed;
+            if(walk.isPlaying == false)
+            {
+                walk.Play();
+            }
         }
         else
         {
             animator.speed = 0;
+            walk.Stop();
         }
         if (true && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.15f, obstacle) == false)
         {

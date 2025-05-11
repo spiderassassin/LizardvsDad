@@ -13,6 +13,7 @@ public class fly : MonoBehaviour
     void Start()
     {
         basePosition = transform.position;
+        camera = Camera.main.gameObject.transform;
     }
 
     // Update is called once per frame
