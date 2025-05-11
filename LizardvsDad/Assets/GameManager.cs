@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public float timer = 0f;
     public GameObject alert;
+    public GameObject DadisHere;
+    public GameObject Run;
     public static GameManager Instance
 
     {
@@ -52,29 +54,33 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer = timer + Time.deltaTime;
-        if((gameState == GameState.ChillTime) && (timer>chill_phase_Length))
+        if((gameState == GameState.ChillTime) && (timer>chill_phase_Length))//SWITCHING TO DADCOME
         {
             gameState = GameState.DadCome;
             timer = 0;
             alert.SetActive(true);
+            DadisHere.SetActive(true);
         }
 
-        if ((gameState == GameState.DadCome) && (dad_time == true))
+        if ((gameState == GameState.DadCome) && (dad_time == true))//SWITCHING TO DADTIME
         {
             shooter.active = true;
             gameState = GameState.DadTime;
             timer = 0;
             dad_time = false;
-            
+            DadisHere.SetActive(false);
+            Run.SetActive(true);
+
         }
 
 
-        else if ((gameState == GameState.DadTime) && (timer > dad_phase_Length))
+        else if ((gameState == GameState.DadTime) && (timer > dad_phase_Length))//SWITCHING TO CHILLTIME
         {
             shooter.active = false;
             gameState = GameState.ChillTime;
             timer = 0;
             alert.SetActive(false);
+            Run.SetActive(false);
         }
 
     }
