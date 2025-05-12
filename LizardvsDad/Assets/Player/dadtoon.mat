@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon
+  m_Name: dadtoon
   m_Shader: {fileID: 4800000, guid: b80bfd2368e71493f8548b9c12af1446, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Brightness: 0.1
-    - _Cutoff: 0.459
+    - _Cutoff: 0.37
     m_Colors:
-    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.26522052, g: 0.2572535, b: 0.38679248, a: 1}
   m_BuildTextureStacks: []
