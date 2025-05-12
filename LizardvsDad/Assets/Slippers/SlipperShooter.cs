@@ -19,7 +19,7 @@ public class SlipperShooter : MonoBehaviour
 
         if (active && fireTimer >= fireInterval)
         {
-            Fire();
+            //Fire();
             fireTimer = 0f;
         }
 
@@ -29,7 +29,7 @@ public class SlipperShooter : MonoBehaviour
    
     }
 
-    void Fire()
+    public void Fire()
     {
         Transform firePoint = sourceObject.transform;
         Vector3 fireRotation = (target.transform.position - sourceObject.transform.position).normalized;

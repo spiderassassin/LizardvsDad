@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if(timer <= 0f)
         {
-            print("hmm");
+            //print("hmm");
             material.SetColor("_BaseColor", Color.green);
         }
     }

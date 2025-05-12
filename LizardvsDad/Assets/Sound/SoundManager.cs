@@ -10,10 +10,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip ActionTrack;
     public AudioClip DadStomp;
     public List<AudioClip> barks = new List<AudioClip>();
+    public AudioClip dadGo;
     int choice = 0;
     public AudioSource music;
+    public AudioSource doorCreak;
 
-    
+
     public GameObject audioSource;
     bool bark_played = false;
 
@@ -45,6 +47,7 @@ public class SoundManager : MonoBehaviour
 
         if (GameManager.Instance.gameState == GameManager.GameState.DadCome)
         {
+            //print("anim" + GameManager.Instance.Door.GetCurrentAnimatorStateInfo(0).normalizedTime);
             if (music.clip != DadStomp && music.clip != barks[choice])
             {
                 music.loop = false;
@@ -52,7 +55,15 @@ public class SoundManager : MonoBehaviour
                 music.Play();
             }
 
-            if (music.clip == DadStomp && music.isPlaying == false)
+            else if ((music.clip == DadStomp && music.isPlaying == false) && GameManager.Instance.Door.GetBool("DoorOpen") == false)
+            {
+                GameManager.Instance.Dad.SetActive(true);
+                GameManager.Instance.Door.SetBool("DoorOpen", true);
+                doorCreak.Play();
+                
+            }
+
+            else if((GameManager.Instance.Door.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f && GameManager.Instance.Door.GetCurrentAnimatorStateInfo(0).IsName("DoorOpen")) && music.clip != barks[choice])
             {
                 choice = Random.Range(0, barks.Count);
                 music.clip = barks[choice];
@@ -62,7 +73,7 @@ public class SoundManager : MonoBehaviour
 
 
 
-            if (music.clip == barks[choice] && music.isPlaying == false)
+            else if (music.clip == barks[choice] && music.isPlaying == false)
             {
                 GameManager.Instance.dad_time = true;
             }
@@ -81,7 +92,24 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-        
+        if (GameManager.Instance.gameState == GameManager.GameState.DadGo)
+        {
+            if (music.clip != dadGo)
+            {
+                music.loop = false;
+                music.clip = dadGo;
+                music.Play();
+            }
+            if (music.clip == dadGo && music.isPlaying == false)
+            {
+                GameManager.Instance.Door.SetBool("DoorOpen", false);
+                GameManager.Instance.dad_left = true;
+            }
+
+        }
+
+
+
 
 
     }
